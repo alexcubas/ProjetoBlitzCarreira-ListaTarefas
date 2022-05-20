@@ -6,10 +6,8 @@ module.exports = {
     meta: {
         type: 'suggestion',
         docs: {
-            description: 'Disallow global tests',
-            url: 'https://github.com/lo1tuma/eslint-plugin-mocha/blob/master/docs/rules/no-global-tests.md'
-        },
-        schema: []
+            description: 'Disallow global tests'
+        }
     },
     create(context) {
         const astUtils = createAstUtils(context.settings);
@@ -24,7 +22,7 @@ module.exports = {
                 const scope = context.getScope();
 
                 if (astUtils.isTestCase(node) && isGlobalScope(scope)) {
-                    context.report({ node: callee, message: 'Unexpected global mocha test.' });
+                    context.report(callee, 'Unexpected global mocha test.');
                 }
             }
         };

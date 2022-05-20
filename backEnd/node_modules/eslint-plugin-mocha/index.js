@@ -23,8 +23,7 @@ module.exports = {
         'no-top-level-hooks': require('./lib/rules/no-top-level-hooks'),
         'prefer-arrow-callback': require('./lib/rules/prefer-arrow-callback'),
         'valid-suite-description': require('./lib/rules/valid-suite-description'),
-        'valid-test-description': require('./lib/rules/valid-test-description'),
-        'no-empty-description': require('./lib/rules/no-empty-description.js')
+        'valid-test-description': require('./lib/rules/valid-test-description')
     },
     configs: {
         all: {
@@ -52,8 +51,7 @@ module.exports = {
                 'mocha/no-top-level-hooks': 'error',
                 'mocha/prefer-arrow-callback': 'error',
                 'mocha/valid-suite-description': 'error',
-                'mocha/valid-test-description': 'error',
-                'mocha/no-empty-description': 'error'
+                'mocha/valid-test-description': 'error'
             }
         },
 
@@ -68,7 +66,7 @@ module.exports = {
                 'mocha/no-exports': 'error',
                 'mocha/no-global-tests': 'error',
                 'mocha/no-hooks': 'off',
-                'mocha/no-hooks-for-single-case': 'off',
+                'mocha/no-hooks-for-single-case': 'warn',
                 'mocha/no-identical-title': 'error',
                 'mocha/no-mocha-arrows': 'error',
                 'mocha/no-nested-tests': 'error',
@@ -82,8 +80,7 @@ module.exports = {
                 'mocha/no-top-level-hooks': 'warn',
                 'mocha/prefer-arrow-callback': 'off',
                 'mocha/valid-suite-description': 'off',
-                'mocha/valid-test-description': 'off',
-                'mocha/no-empty-description': 'error'
+                'mocha/valid-test-description': 'off'
             }
         }
     }

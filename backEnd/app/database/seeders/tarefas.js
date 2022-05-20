@@ -7,8 +7,8 @@ module.exports = {
         status: 'pendente',
       },
       {
-        titulo: 'chorar',
-        descricao: 'chorar mt',
+        titulo: 'teste',
+        descricao: 'fazer testes E2E',
         status: 'em andamento',
       },
     ], {});

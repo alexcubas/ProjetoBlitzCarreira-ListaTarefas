@@ -1,6 +1,5 @@
-import { Model, INTEGER, STRING } from 'sequelize';
+import { DATE, Model, INTEGER, STRING } from 'sequelize';
 import db from '.';
-// import OtherModel from './OtherModel';
 
 class Tarefas extends Model {
   public id!: number;
@@ -10,7 +9,6 @@ class Tarefas extends Model {
   public descricao: string;
 
   public status: string;
-
 }
 
 Tarefas.init({
@@ -31,24 +29,16 @@ Tarefas.init({
   status: {
     type: STRING,
     allowNull: false,
-  }
+    defaultValue: 'Pendente',
+  },
+  createdAt: {
+    type: DATE,
+  },
 }, {
-  // ... Outras configs
   underscored: true,
   sequelize: db,
   modelName: 'Tarefas',
-  timestamps: false,
+  timestamps: true,
 });
-
-/**
-  * `Workaround` para aplicar as associations em TS:
-  * Associations 1:N devem ficar em uma das instâncias de modelo
-  * */
-
-// OtherModel.belongsTo(Tarefas, { foreignKey: 'campoA', as: 'campoEstrangeiroA' });
-// OtherModel.belongsTo(Tarefas, { foreignKey: 'campoB', as: 'campoEstrangeiroB' });
-
-// Tarefas.hasMany(OtherModel, { foreignKey: 'campoC', as: 'campoEstrangeiroC' });
-// Tarefas.hasMany(OtherModel, { foreignKey: 'campoD', as: 'campoEstrangeiroD' });
 
 export default Tarefas;

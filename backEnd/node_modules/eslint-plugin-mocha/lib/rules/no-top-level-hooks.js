@@ -6,10 +6,8 @@ module.exports = {
     meta: {
         type: 'problem',
         docs: {
-            description: 'Disallow top-level hooks',
-            url: 'https://github.com/lo1tuma/eslint-plugin-mocha/blob/master/docs/rules/no-top-level-hooks.md'
-        },
-        schema: []
+            description: 'Disallow top-level hooks'
+        }
     },
     create(context) {
         const astUtils = createAstUtils(context.settings);

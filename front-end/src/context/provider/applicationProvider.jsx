@@ -4,11 +4,17 @@ import ApplicationContext from '../applicationContext';
 
 function ApplicationProvider({ children }) {
   const [tarefas, setTarefas] = useState([]);
+  const [status, setStatus] = useState('em andamento');
+  const [novaTarefa, setNovaTarefa] = useState({ titulo: '', descricao: '' });
 
   const context = useMemo(() => ({
     tarefas,
     setTarefas,
-  }), [tarefas]);
+    status,
+    setStatus,
+    novaTarefa,
+    setNovaTarefa,
+  }), [tarefas, status, novaTarefa]);
 
   return (
     <ApplicationContext.Provider value={context}>

@@ -49,8 +49,7 @@ module.exports = {
     meta: {
         type: 'suggestion',
         docs: {
-            description: 'Match test descriptions against a pre-configured regular expression',
-            url: 'https://github.com/lo1tuma/eslint-plugin-mocha/blob/master/docs/rules/valid-test-description.md'
+            description: 'Match test descriptions against a pre-configured regular expression'
         },
         schema: [
             {
@@ -104,7 +103,7 @@ module.exports = {
 
                 if (isTest(node)) {
                     if (!hasValidOrNoTestDescription(node)) {
-                        context.report({ node, message: message || `Invalid "${ callee.name }()" description found.` });
+                        context.report(node, message || `Invalid "${ callee.name }()" description found.`);
                     }
                 }
             }

@@ -8,10 +8,8 @@ module.exports = {
     meta: {
         type: 'problem',
         docs: {
-            description: 'Disallow tests to be nested within other tests ',
-            url: 'https://github.com/lo1tuma/eslint-plugin-mocha/blob/master/docs/rules/no-nested-tests.md'
-        },
-        schema: []
+            description: 'Disallow tests to be nested within other tests '
+        }
     },
     create(context) {
         const astUtils = createAstUtils(context.settings);

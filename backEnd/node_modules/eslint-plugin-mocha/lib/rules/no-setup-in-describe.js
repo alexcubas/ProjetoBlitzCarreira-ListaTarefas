@@ -39,10 +39,8 @@ module.exports = {
     meta: {
         type: 'suggestion',
         docs: {
-            description: 'Disallow setup in describe blocks',
-            url: 'https://github.com/lo1tuma/eslint-plugin-mocha/blob/master/docs/rules/no-setup-in-describe.md'
-        },
-        schema: []
+            description: 'Disallow setup in describe blocks'
+        }
     },
     create(context) {
         const nesting = [];

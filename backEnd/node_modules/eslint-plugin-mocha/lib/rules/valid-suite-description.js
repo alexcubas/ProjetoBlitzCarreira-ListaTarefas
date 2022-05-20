@@ -50,8 +50,7 @@ module.exports = {
     meta: {
         type: 'suggestion',
         docs: {
-            description: 'Match suite descriptions against a pre-configured regular expression',
-            url: 'https://github.com/lo1tuma/eslint-plugin-mocha/blob/master/docs/rules/valid-suite-description.md'
+            description: 'Match suite descriptions against a pre-configured regular expression'
         },
         schema: [
             {
@@ -105,7 +104,7 @@ module.exports = {
 
                 if (isSuite(node)) {
                     if (!hasValidOrNoSuiteDescription(node)) {
-                        context.report({ node, message: message || `Invalid "${ callee.name }()" description found.` });
+                        context.report(node, message || `Invalid "${ callee.name }()" description found.`);
                     }
                 }
             }
